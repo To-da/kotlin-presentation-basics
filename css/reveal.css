@@ -24,6 +24,14 @@ body {
   background-color: #fff;
   color: #000; }
 
+  html.dimbg .slide-background {
+    opacity: 0.2 !important;
+  }
+
+  .reveal .slides h2 {
+    color: #f1860b !important;
+  }
+
 /*********************************************
  * VIEW FRAGMENTS
  *********************************************/

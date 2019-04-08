@@ -1,53 +1,159 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>Kotlin basics</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<meta name="description" content="Presentation about basics of Kotlin programming language">
+	<meta name="author" content="Martin Tosovsky, Jiri Mikulasek, Libor Rysavy">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Go to next slide</section>
+	<title>reveal.js</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+
+			<section data-background-image="https://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/10/kotlin.jpg?zoom=2&resize=730%2C389" data-state="no-toc-progress" data-transition="fade">
+				<span style="position: absolute;right: 800px">
+					<h1>Kotlin</h1>
+					<h4>programming language basics</h4>
+				</span>
+				<span style="position: absolute;left: 600px">
+					<p>
+						<h5>Authors:</h5>
+						<small><a href="https://github.com/to-da">Martin Tošovský | <em>to-da</em></a></small>
+						<small><a href="https://github.com/jimirocks">Jiří Mikulášek | <em>jimi</em></a></small>
+						<small><a href="https://github.com/liry">Libor Ryšavý  | <em>liry</em></a></small>
+					</p>
+				</span>
+			</section>
+
+			<section data-background-image="https://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/10/kotlin.jpg?zoom=2&resize=730%2C389" data-state="dimbg">
+				<section><h1> Why Kotlin ?<br> <small>Motivation</small></h1></section>
 				<section>
-					<h2>Kotlin main method example</h2>
-					<p>Presentation can be kotlin example, here it is:</p>
-					<iframe data-src="https://pl.kotl.in/By2c9hdFN" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+					<h2>Created by JetBrains</h2>
+						<p class="fragment" data-fragment-index="1">For their internal purposes.<br><small> ... scala compilation was too slow ... </small></p>
+						<p class="fragment" data-fragment-index="2">They work with various languages on daily basis. <br><small> ... should be able to design one ... </small></p>
+						<p class="fragment" data-fragment-index="3">Great IDE support and tooling. <br><small> ... IntellyJ IDEA ... </small></p>
 				</section>
-			</div>
+				<section>
+					<h2>Mature</h2>
+						<p class="fragment" data-fragment-index="1">Version 1.3 now.</p>
+						<p class="fragment" data-fragment-index="2">No more breaking changes in API (since 1.0).</p>
+						<p class="fragment" data-fragment-index="3">Defined process for components stability.</p>
+				</section>
+				<section>
+					<h2>Adopters</h2>
+						<p class="fragment" data-fragment-index="1">Server-side - Spring, Ratpack<small>*</small> ...</p>
+						<p class="fragment" data-fragment-index="2">Android (irrelevant for GoodData)</p>
+						<p class="fragment" data-fragment-index="3"><a href="https://pusher.com/state-of-kotlin">State of Kotlin</a></p>
+				</section>
+				<section>
+					<h2>Multiplatform</h2>
+						<p class="fragment" data-fragment-index="1">Ktor - <a href="https://ktor.io/samples/fullstack-mpp.html">Example</a></p>
+						<p class="fragment" data-fragment-index="2">kotlinx.serialization <a href="https://github.com/Kotlin/kotlinx.serialization#quick-example">Example</a></p>
+				</section>
+				<section>
+				<h2>Key (killer) features</h2>
+					<p class="fragment" data-fragment-index="1">Compile time safety.</p>
+					<p class="fragment" data-fragment-index="2">Strong in DSLs. <br><small> ... you can easily make your own ... </small> </p>
+					<p class="fragment" data-fragment-index="3">Extension functions.</p>
+					<p class="fragment" data-fragment-index="4">C-like syntax, functional/imperative/object-oriented style/paradigm.</p>
+					<p class="fragment" data-fragment-index="5">Seamless integration with Java.</p>
+				</section>
+			</section>
+
+			<section data-background-image="https://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/10/kotlin.jpg?zoom=2&resize=730%2C389" data-state="dimbg">
+				<section><h1> Kotlin Philosophy </h1></section>
+				<section>
+					<h2>Pragmatic</h2>
+						<p class="fragment" data-fragment-index="1">Designed to solve real-world problems. <br><small> ... based on industry experience - Tooling creators + years of usage early versions by adopters ... </small></p>
+						<p class="fragment" data-fragment-index="2">Do not enforce any particular programming style or paradigm. <br><small> ... can be used just like Java (OOP/imperative) in the beginning ... </small></p>
+						<p class="fragment" data-fragment-index="3">Language features designed with tooling in mind. <br><small> ... IDE find more concise constructs, fix the problems etc ... </small></p>
+				</section>
+				<section>
+					<h2>Concise</h2>
+						<p class="fragment" data-fragment-index="1">“make you code smaller”<br><small> ... less code means fewer bugs :) ... </small> <br><small> ... developer spent (much) more time reading existing code then writing new one ... </small></p>
+						<p class="fragment" data-fragment-index="2">Code contains meaning. <br><small> ... less boilerplate (getters/setters/constructors etc.) ... </small></p>
+						<p class="fragment" data-fragment-index="3">No “free” operator overloading. <br><small> ... you can always find what you want in documentation ... </small> <br><small> ... no cryptic punctuation sequences ( hello Scala :) ) ... </small></p>
+				</section>
+				<section>
+					<h2>Safe</h2>
+						<p class="fragment" data-fragment-index="1">Preventing <u>certain</u> kinds of errors.<br><small> ... more than Java ... </small></p>
+						<p class="fragment" data-fragment-index="2">no NullPointerException / better ways to handle nullable data.</p>
+						<p class="fragment" data-fragment-index="3">TODO example for both  like if (value is String) println(value.toUpperCase())</p>
+				</section>
+				<section>
+					<h2>Interoperable</h2>
+						<p class="fragment" data-fragment-index="1">You can call methods, extend classes, implement interfaces, apply Annotations to Kotlin classes.</p>
+						<p class="fragment" data-fragment-index="2">You can debug code between Kotlin and Java (mixed code-bases)</p>
+						<p class="fragment" data-fragment-index="3">Kotlin can be called from Java as well (classes and methods without )</p>
+						<p class="fragment" data-fragment-index="4">Kotlin is using Java collection library (just extending it with functions)</p>
+				</section>
+			</section>		
+			
+			<section data-background-image="https://cdn-images-1.medium.com/max/2600/1*7e2RXi01fGB5gqxb5ZqzRA.gif"></section>
+
+
+
+			<section
+				data-background-image="https://i0.wp.com/softwareengineeringdaily.com/wp-content/uploads/2018/10/kotlin.jpg?zoom=2&resize=730%2C389"
+				data-state="dimbg">
+				<h2>Kotlin main method example - TODO delete</h2>
+				<p>Presentation can be kotlin example, here it is:</p>
+				<iframe data-src="https://pl.kotl.in/By2c9hdFN" width="345" height="185" frameborder="0" marginwidth="0"
+					marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;"
+					allowfullscreen> </iframe>
+			</section>
+
 		</div>
+	</div>
 
-		<script src="js/reveal.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			minScale: 0.2,
+			maxScale: 1.5,
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true },
+				// Zoom in and out with Alt+click
+				{ src: 'plugin/zoom-js/zoom.js', async: true }
+			]
+		});
+	</script>
+</body>
+
 </html>
